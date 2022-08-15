@@ -5,7 +5,7 @@ from __future__ import absolute_import
 
 from contextlib import contextmanager
 
-from ..auto import tqdm as tqdm_auto
+from ..auto_normal import tqdm as tqdm_auto
 from ..std import TqdmWarning
 
 try:
@@ -51,7 +51,7 @@ def _executor_map(PoolExecutor, fn, *iterables, **tqdm_kwargs):
 
     Parameters
     ----------
-    tqdm_class  : [default: tqdm.auto.tqdm].
+    tqdm_class  : [default: tqdm.auto_normal.tqdm].
     max_workers  : [default: min(32, cpu_count() + 4)].
     chunksize  : [default: 1].
     lock_name  : [default: "":str].
@@ -84,7 +84,7 @@ def thread_map(fn, *iterables, **tqdm_kwargs):
     Parameters
     ----------
     tqdm_class  : optional
-        `tqdm` class to use for bars [default: tqdm.auto.tqdm].
+        `tqdm` class to use for bars [default: tqdm.auto_normal.tqdm].
     max_workers  : int, optional
         Maximum number of workers to spawn; passed to
         `concurrent.futures.ThreadPoolExecutor.__init__`.
@@ -102,7 +102,7 @@ def process_map(fn, *iterables, **tqdm_kwargs):
     Parameters
     ----------
     tqdm_class  : optional
-        `tqdm` class to use for bars [default: tqdm.auto.tqdm].
+        `tqdm` class to use for bars [default: tqdm.auto_normal.tqdm].
     max_workers  : int, optional
         Maximum number of workers to spawn; passed to
         `concurrent.futures.ProcessPoolExecutor.__init__`.

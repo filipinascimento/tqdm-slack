@@ -1,7 +1,7 @@
 """
-Even more features than `tqdm.auto` (all the bells & whistles):
+Even more features than `tqdm.auto_normal` (all the bells & whistles):
 
-- `tqdm.auto`
+- `tqdm.auto_normal`
 - `tqdm.tqdm.pandas`
 - `tqdm.contrib.telegram`
     + uses `${TQDM_TELEGRAM_TOKEN}` and `${TQDM_TELEGRAM_CHAT_ID}`
@@ -19,7 +19,7 @@ elif getenv("TQDM_TELEGRAM_TOKEN") and getenv("TQDM_TELEGRAM_CHAT_ID"):
 elif getenv("TQDM_DISCORD_TOKEN") and getenv("TQDM_DISCORD_CHANNEL_ID"):
     from .discord import tqdm, trange
 else:
-    from ..auto import tqdm, trange
+    from ..auto_normal import tqdm, trange
 
 with warnings.catch_warnings():
     warnings.simplefilter("ignore", category=FutureWarning)

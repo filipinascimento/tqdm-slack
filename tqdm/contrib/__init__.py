@@ -6,7 +6,7 @@ Subpackages contain potentially unstable extensions.
 import sys
 from functools import wraps
 
-from ..auto import tqdm as tqdm_auto
+from ..auto_normal import tqdm as tqdm_auto
 from ..std import tqdm
 from ..utils import ObjectWrapper
 

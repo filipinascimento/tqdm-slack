@@ -15,7 +15,7 @@ from warnings import warn
 
 from requests import Session
 
-from ..auto import tqdm as tqdm_auto
+from ..auto_normal import tqdm as tqdm_auto
 from ..std import TqdmWarning
 from ..utils import _range
 from .utils_worker import MonoWorker
@@ -91,7 +91,7 @@ class TelegramIO(MonoWorker):
 
 class tqdm_telegram(tqdm_auto):
     """
-    Standard `tqdm.auto.tqdm` but also sends updates to a Telegram Bot.
+    Standard `tqdm.auto_normal.tqdm` but also sends updates to a Telegram Bot.
     May take a few seconds to create (`__init__`).
 
     - create a bot <https://core.telegram.org/bots#6-botfather>
@@ -114,7 +114,7 @@ class tqdm_telegram(tqdm_auto):
         chat_id  : str, required. Telegram chat ID
             [default: ${TQDM_TELEGRAM_CHAT_ID}].
 
-        See `tqdm.auto.tqdm.__init__` for other parameters.
+        See `tqdm.auto_normal.tqdm.__init__` for other parameters.
         """
         if not kwargs.get('disable'):
             kwargs = kwargs.copy()

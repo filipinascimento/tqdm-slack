@@ -5,7 +5,7 @@ from __future__ import absolute_import
 
 import itertools
 
-from ..auto import tqdm as tqdm_auto
+from ..auto_normal import tqdm as tqdm_auto
 
 __author__ = {"github.com/": ["casperdcl"]}
 __all__ = ['product']
@@ -17,7 +17,7 @@ def product(*iterables, **tqdm_kwargs):
 
     Parameters
     ----------
-    tqdm_class  : [default: tqdm.auto.tqdm].
+    tqdm_class  : [default: tqdm.auto_normal.tqdm].
     """
     kwargs = tqdm_kwargs.copy()
     tqdm_class = kwargs.pop("tqdm_class", tqdm_auto)

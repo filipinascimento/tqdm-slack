@@ -18,7 +18,7 @@ try:
 except ImportError:
     raise ImportError("Please `pip install disco-py`")
 
-from ..auto import tqdm as tqdm_auto
+from ..auto_normal import tqdm as tqdm_auto
 from ..utils import _range
 from .utils_worker import MonoWorker
 
@@ -62,7 +62,7 @@ class DiscordIO(MonoWorker):
 
 class tqdm_discord(tqdm_auto):
     """
-    Standard `tqdm.auto.tqdm` but also sends updates to a Discord Bot.
+    Standard `tqdm.auto_normal.tqdm` but also sends updates to a Discord Bot.
     May take a few seconds to create (`__init__`).
 
     - create a discord bot (not public, no requirement of OAuth2 code
@@ -85,7 +85,7 @@ class tqdm_discord(tqdm_auto):
         mininterval  : float, optional.
           Minimum of [default: 1.5] to avoid rate limit.
 
-        See `tqdm.auto.tqdm.__init__` for other parameters.
+        See `tqdm.auto_normal.tqdm.__init__` for other parameters.
         """
         if not kwargs.get('disable'):
             kwargs = kwargs.copy()
